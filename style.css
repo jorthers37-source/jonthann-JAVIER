@@ -1,0 +1,217 @@
+/* ===== Fanpage Albert Einstein ===== */
+
+:root {
+  --tinta: #1f2a37;
+  --papel: #f7f3ea;
+  --tarjeta: #ffffff;
+  --acento: #b5651d;
+  --acento-oscuro: #8a4a12;
+  --suave: #6b7280;
+  --borde: #e5dccb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--papel);
+  color: var(--tinta);
+  line-height: 1.7;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  background: var(--tinta);
+  color: var(--papel);
+  text-align: center;
+  padding: 3rem 1rem 5rem;
+}
+
+.encabezado h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  font-style: italic;
+  color: #d8cdb6;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* FOTO */
+.foto {
+  text-align: center;
+  margin-top: -4rem;
+}
+
+.foto img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--papel);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* CONTENIDO */
+.contenido {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contenido section {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contenido h2 {
+  color: var(--acento);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--borde);
+}
+
+.contenido p {
+  margin-bottom: 1rem;
+}
+
+.contenido ul {
+  list-style: none;
+}
+
+.info-basica li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--borde);
+}
+
+.info-basica li:last-child {
+  border-bottom: none;
+}
+
+/* GALERÍA */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.galeria h2 {
+  width: 100%;
+}
+
+.galeria img {
+  width: calc(50% - 0.5rem);
+  min-width: 220px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+/* VIDEO (imagen que lleva a YouTube) */
+.video-link {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-link img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.video-link .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 56px;
+  background: #ff0000;
+  color: #fff;
+  font-size: 1.8rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.video-link:hover img {
+  filter: brightness(0.8);
+}
+
+.video-link:hover .play {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-nota {
+  text-align: center;
+  color: var(--suave);
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* ENLACES */
+.enlaces li {
+  margin: 0.6rem 0;
+}
+
+.enlaces a {
+  color: var(--acento);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.enlaces a:hover {
+  color: var(--acento-oscuro);
+  text-decoration: underline;
+}
+
+.enlaces li::before {
+  content: "→ ";
+  color: var(--acento);
+}
+
+/* PIE DE PÁGINA */
+.pie {
+  background: var(--tinta);
+  color: #d8cdb6;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  .galeria img {
+    width: 100%;
+  }
+
+  .foto img {
+    width: 170px;
+    height: 170px;
+  }
+}
